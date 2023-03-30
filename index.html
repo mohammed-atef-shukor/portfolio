@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <header>
+      <h1>My Portfolio</h1>
+      <nav class="desktop-menu">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-menu">
+        <span class="mobile-menu-icon">&#9776;</span>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'mmohammed atef shokor and I'm a web developer.</p>
+      </section>
+      <section id="work">
+        <h2>My Work</h2>
+        <ul id="project-list">
+          
+        </ul>
+        <form id="add-project-form">
+          <label for="project-name">Project Name:</label>
+          <input type="text" id="project-name" name="project-name" onfocus="this.value=''">
+          <label for="project-link">Project Link:</label>
+          <input type="text" id="project-link" name="project-link">
+          <button type="submit" id="add-project-button">Add Project</button>
+        </form>
+      </section>
+     
+    </head>
+    <body>
+      <section id="contact-form">
+        <h2>Contact Me</h2>
+        <form class="inf_form">
+          <label for="name">Your Name:</label>
+          <input type="text" id="name" name="name" required>
+          <label for="email">Your Email:</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">Your Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit" class="send-button">Send</button>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2021 My Portfolio</p>
+    </footer>
+    <script>
+      // Get the mobile menu icon and the mobile menu navigation
+      const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+      const mobileMenuNav = document.querySelector('.mobile-menu nav');
+
+      // Toggle the mobile menu when the menu icon is clicked
+      mobileMenuIcon.addEventListener('click', () => {
+        mobileMenuNav.style.display = mobileMenuNav.style.display === 'block' ? 'none' : 'block';
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Get the form element
+      const form = document.getElementsByClassName(".inf_form");
+
+      // Form validation and submission
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // Get form input values
+        const name = document.querySelector('#name').value;
+        const email = document.querySelector('#email').value;
+        const message = document.querySelector('#message').value;
+
+        // Simple form validation
+        if (name === '' || email === '' || message === '') {
+          alert('Please fill in all the required fields.');
+        } else {
+          // Simulate form submission
+          alert('Thank you for your message! We will get back to you shortly.');
+          form.reset();
+        }
+      });
+    </script>
+    <script src="main.js"></script>
+  </body>
+</html>

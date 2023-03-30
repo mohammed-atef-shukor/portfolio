@@ -1,0 +1,432 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  --primary-color: #4a69bd;
+  --secondary-color: #3c4f76;
+  --text-color: #333;
+}
+
+/* Basic styling for the header */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background-color 0.3s;
+}
+
+/* Style the navigation menu */
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--text-color);
+}
+
+/* Hide the mobile menu by default */
+.mobile-menu {
+  display: none;
+}
+
+/* Basic styling for the main content */
+main {
+  padding: 40px 20px;
+}
+
+/* Style the sections */
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--primary-color);
+}
+
+section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: var(--text-color);
+}
+
+/* Style the My Work section */
+#work ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+#work li {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 20px);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+#work li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+#work a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+#work a:hover {
+  color: var(--secondary-color);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  /* Hide the desktop menu */
+  nav {
+    display: none;
+  }
+
+  /* Show and style the mobile menu */
+  .mobile-menu {
+    display: block;
+    text-align: center;
+  }
+
+  .mobile-menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .mobile-menu nav {
+    display: none;
+  }
+
+  .mobile-menu nav ul {
+    list-style-type: none;
+  }
+
+  .mobile-menu nav li {
+    margin: 5px 0;
+  }
+
+  .mobile-menu nav a {
+    color: var(--text-color);
+    text-decoration: none;
+  }
+
+  .mobile-menu nav a:hover {
+    text-decoration: underline;
+  }
+
+  #work li {
+    width: calc(50% - 20px);
+  }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 480px) {
+  #work li {
+    width: 100%;
+  }
+}
+
+#contact-form {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#contact-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+#contact-form button[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#contact-form button[type="submit"]:hover {
+  background-color: #2196F3;
+}
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 5px #2196F3;
+}
+#contact-form button[type="submit"]:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 5px #2196F3;
+}
+
+
+footer {
+  background-color: #2196F3;
+  color: #333;
+  padding: 20px;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a {
+  color: #333;
+}
+
+footer a:hover {
+  color: #4CAF50;
+}
+
+section {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  text-align: center; /* center the content */
+}
+
+section p {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color:#2196F3;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+section p:first-of-type {
+  margin-bottom: 10px;
+}
+
+section p:last-of-type {
+  font-weight: normal;
+}
+
+.delete-project {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-project:hover {
+  background-color: darkred;
+}
+
+
+#add-project-form {
+  margin-top: 20px;
+}
+
+#add-project-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#add-project-form input[type="text"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 5px;
+}
+
+#add-project-form button[type="submit"] {
+  background-color:#2196F3;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#add-project-form button[type="submit"]:hover {
+  background-color:#4a69bd;
+}
+
+ /* Style the project list */
+ #project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0; /* Add margin to the bottom */
+}
+
+#project-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+#project-list li:last-child {
+  border-bottom: none;
+}
+
+#project-list a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+#project-list a:hover {
+  text-decoration: underline;
+}
+
+.delete-project {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.delete-project:hover {
+  background-color: #d32f2f;
+}
+
+/* Style the form */
+#add-project-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#add-project-form label {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+#add-project-form input[type="text"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+#add-project-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#add-project-button:hover {
+  background-color: #388e3c;
+}
+
+#add-project-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+}
+
+#add-project-form label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#add-project-form input[type="text"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f5f5f5;
+  font-size: 16px;
+}
+
+#add-project-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#add-project-button:hover {
+  background-color: #388e3c;
+}
+
+#add-project-form input[type="text"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px #4caf50;
+  border: 2px solid #4caf50;
+}
